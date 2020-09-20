@@ -36,3 +36,16 @@ No HTML template.
 Thus, React can have a virtual representation of the DOM in memory. Because it generates the views based on js, thus in memory. (Tree reconciliation) 
 
 React compare versions of the DOM in memory before updating the browser. 
+
+# JSX 
+
+React Components are not written in HTML, or JS. It's written in JSX. Which is then compiled to React API calls. One such compiler is Babel. 
+
+```
+<div>Hello World</div>
+```
+is compiled to 
+```
+React.createElement("div", null, "Hello World");
+```
+So you write something that looks like HTML, and Babel is compiling it to React API calls.
