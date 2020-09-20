@@ -64,7 +64,7 @@ HTML - onclick
 React - onClick. 
 
 React uses a function referende. It must be inside curly brakets {}. 
-- `onclick{functionRef}` <-- Correct
+- `onclick={functionRef}` <-- Correct
 - `onClick={functionRef()}` <-- WRONG: You cannot invoke the function, just use the reference (the pointer)
 - `onClick={() ⇒ function()}` <-- Correct: You can put the function definition inside. Here you can use the consise Arrow function. 
 
@@ -85,6 +85,7 @@ If you want to return multiple components, but dont want to add a new DOM elemen
 Props are similar to a list of attributes in HTML. (its explisit)
 Props are fixed, immutable.
 A component has a props parameter even when you havent sendt in any props. 
+Props can hold functions as well, not just data. 
 
 **State**
 State is internal. But react uses it to autoreflect changes in the browser.
@@ -95,3 +96,12 @@ React can only change its internal state, not properties.
 ```JSX
 const [click, setClick] = useState(0);
 ```
+
+
+# Responsibility Isolation 
+
+When sending props, the components parent is in control. 
+The child is just following generic rules and invoke a generic function. 
+The parent control the function to be invoked. This is the isolation of resposibilities 
+
+Developer have to answer this question alot: Where to define the state? Answer: Down in the tree as close as possible to the children that need to access that state. 

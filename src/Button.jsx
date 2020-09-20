@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-
-
-function Button() {
-    let [count, setCount] = useState(0);
+function Button(props) {
 
     return (
     <button
-        onClick={() => setCount(++count)}
+        onClick={props.incrementCount}
     >
-        You clicked {count} times
+        Click me!
     </button>);
 }
 
