@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import Button from './Button';
 
-
-function Hello() {
-  return <div>Hello World!</div>
-}
 
 function App() {
   return (
     <div className="App">
-      <Hello/>
+      <Button />
     </div>
   );
 }

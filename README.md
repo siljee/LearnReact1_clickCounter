@@ -21,6 +21,9 @@ jscomplete.com/whyreact
 - Private state
 - Reusable and composable
 
+Functions and classes can both have state and side effects, or be purely representatable. 
+It's Recomended to use Functions, but classes are more powerful
+
 **Reactive updates:** 
 
 - When the input changes the output changes. This must be reflected in the DOM. React takes care of this
@@ -41,11 +44,54 @@ React compare versions of the DOM in memory before updating the browser.
 
 React Components are not written in HTML, or JS. It's written in JSX. Which is then compiled to React API calls. One such compiler is Babel. 
 
-```
+```jsx
 <div>Hello World</div>
 ```
 is compiled to 
-```
+```jsx
 React.createElement("div", null, "Hello World");
 ```
 So you write something that looks like HTML, and Babel is compiling it to React API calls.
+
+# Beginner mistakes
+
+- Always start React Component Name with Upper Case. 
+- When returning mutiple lines, use () not {}. We are not returning an object, we are returning a function call 
+
+# onCLick Event Handler
+
+HTML - onclick
+React - onClick. 
+
+React uses a function referende. It must be inside curly brakets {}. 
+- `onclick{functionRef}` <-- Correct
+- `onClick={functionRef()}` <-- WRONG: You cannot invoke the function, just use the reference (the pointer)
+- `onClick={() ⇒ function()}` <-- Correct: You can put the function definition inside. Here you can use the consise Arrow function. 
+
+# React.Fragment <></>
+
+If you want to return multiple components, but dont want to add a new DOM element (`<div>`) you can use `<React.Fragment>`. This is so common that they have the shortcut: 
+
+```jsx
+<>  // Translates to <React.Fragment>
+ <Component1 /> 
+ <Component2 />
+</>
+```
+
+# Props and State
+
+**Props**
+Props are similar to a list of attributes in HTML. (its explisit)
+Props are fixed, immutable.
+A component has a props parameter even when you havent sendt in any props. 
+
+**State**
+State is internal. But react uses it to autoreflect changes in the browser.
+
+React can only change its internal state, not properties.
+
+`useState()` hooks the component into the state:
+```JSX
+const [click, setClick] = useState(0);
+```
