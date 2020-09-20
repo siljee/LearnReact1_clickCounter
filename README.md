@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Why react
 
-## Available Scripts
+- Library, not framework - small, not complete (decision, flexible)
+- React is declarative. HTML is also declarative, but for static pages. The developer writes what to show, but not how to show it. 
+**Imperative programming** is a paradigm of computer programming in which the *program describes a sequence of steps* that change the state of the computer.
+**Declarative programming** is a computer programming paradigm that the developer *defines what the program should accomplish* rather than explicitly defining how it should go about doing so
+- Viritual DOM
+- Just javascript
+- React Native
+- Facebook battle-tests it
 
-In the project directory, you can run:
+jscomplete.com/whyreact
 
-### `npm start`
+# React Basic Components
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Component:** 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Input: props or state
+- Output: UI
+- Like functions
+- Private state
+- Reusable and composable
 
-### `npm test`
+**Reactive updates:** 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- When the input changes the output changes. This must be reflected in the DOM. React takes care of this
 
-### `npm run build`
+**Viritual views in memory:**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+We don't write HTM. We use Javascript to generate it. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+When you get only data from server, you have two choises for doing more with that data than just html. You could enhance HTML with new things (Angular etc.). Or you could use javascript to genereate html from the data (React). 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+No HTML template.
 
-### `npm run eject`
+Thus, React can have a virtual representation of the DOM in memory. Because it generates the views based on js, thus in memory. (Tree reconciliation) 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+React compare versions of the DOM in memory before updating the browser. 
