@@ -61,6 +61,7 @@ So you write something that looks like HTML, and Babel is compiling it to React 
 # onCLick Event Handler
 
 HTML - onclick
+
 React - onClick. 
 
 React uses a function referende. It must be inside curly brakets {}. 
