@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Button(props) {
+function Button({incrementCount, increment=100}) {
 
     return (
     <button
-        onClick={() => props.incrementCount(props.increment)}
+        onClick={() => incrementCount(increment)}
     >
-        + {props.increment}
+        + {increment}
     </button>);
 }
 

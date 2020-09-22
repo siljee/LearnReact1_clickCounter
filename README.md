@@ -122,3 +122,91 @@ The child is just following generic rules and invoke a generic function.
 The parent control the function to be invoked. This is the isolation of resposibilities 
 
 Developer have to answer this question alot: Where to define the state? Answer: Down in the tree as close as possible to the children that need to access that state. 
+
+# JavaScript
+
+**EMACScript**
+
+ECMAScript - official specification that JavaScript conforms to. 
+
+TC39 - ECMA International Technical Committee - Yearly releases of features. 
+Modern browsers shortly follows.
+
+ES6 - ECMAScript 2015 - First of the yearly releases. 
+
+https://jscomplete.com/learn/beginner
+
+
+**Scope**
+
+Variables (var) are local in functions. 
+But can be accessed outside of block scopes (if, for) 
+Thus, recommended to use `let`. 
+`let` and `const` are not leaked outside of a block.
+
+`const` -  is a constant reference. Not a constant value. It will always point to the same object, but the object may be modified.
+
+**this in functions**
+
+```JavaScript 
+const x = function() {}
+```
+Gives access to the `caller` environment. `this` is the OBJECT that CALLED x.
+
+```JavaScript 
+const y = () => {}
+```
+Gives access to the `defining` environment. `this` is the SCOPE that DEFINED y. It don't care who called it. 
+It depends on where the function was defined. 
+This makes it great for delayed executions, like event listeners.
+
+
+**Destructuring**
+
+```JavaScript
+const {PI, E, SQRT2} = Math;
+```
+Is the same as: 
+```JavaScript
+const PI = Math.PI;
+const E = Math.E;
+const SQRT2 = Math.SQRT2;
+```
+
+It's used in import, props, useState etc.
+
+Can also destruct based on order:
+```JavaScript
+const [first, second, , fourth] = [10, 20, 30, 40];
+```
+RestOf:
+```JavaScript
+const [first, ...restOfObjects] = [10, 20, 30, 40];
+```
+
+**Async await**
+
+Old - with `.then()`:
+```JavaScript
+const getData = () => {
+    fetch(url).then(response => {
+        response.json().then(data => {
+            console.log(data)
+        });
+    });
+};
+```
+This is not that readable. The modern way is to use async await. 
+This i equivalent (note the `async` keyword): 
+```JavaScript
+const getData = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+}
+```
+
+Async await lets us consume promises without lots of nesting of then() calls. 
+Simpler to read. 
+
+When a function has the async keyword, it returns a promise that must be handled. 

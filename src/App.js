@@ -29,6 +29,10 @@ function App() {
         incrementCount={incrementCount}
         increment={10}
       />
+      <Button 
+        count={count}
+        incrementCount={incrementCount}
+      />
       <Display 
         count={count}
         />
