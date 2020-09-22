@@ -4,9 +4,9 @@ function Button(props) {
 
     return (
     <button
-        onClick={props.incrementCount}
+        onClick={() => props.incrementCount(props.increment)}
     >
-        Click me!
+        + {props.increment}
     </button>);
 }
 
