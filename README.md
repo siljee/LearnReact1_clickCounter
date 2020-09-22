@@ -52,7 +52,9 @@ React compare versions of the DOM in-memory before updating the browser.
 Smart diffing-algorithm => Only updates what is changed. Keeps everything else the same.
 
 
-# JSX 
+# Some React Concepts
+
+## JSX 
 
 React Components are not written in HTML, or JS. It's written in JSX. Which is then compiled to React API calls. One such compiler is Babel. 
 
@@ -67,12 +69,12 @@ So you write something that looks like HTML, and Babel is compiling it to React 
 
 ReactDOM.render (takes a component and a DOM element) and React events.
 
-# Beginner mistakes
+## Beginner mistakes
 
 - Always start React Component Name with Upper Case. 
 - When returning mutiple lines, use () not {}. We are not returning an object, we are returning a function call 
 
-# onCLick Event Handler
+## onCLick Event Handler
 
 HTML - onclick
 
@@ -83,7 +85,7 @@ React uses a function referende. It must be inside curly brakets {}.
 - `onClick={functionRef()}` <-- WRONG: You cannot invoke the function, just use the reference (the pointer)
 - `onClick={() ⇒ function()}` <-- Correct: You can put the function definition inside. Here you can use the consise Arrow function. 
 
-# React.Fragment <></>
+## React.Fragment <></>
 
 If you want to return multiple components, but dont want to add a new DOM element (`<div>`) you can use `<React.Fragment>`. This is so common that they have the shortcut: 
 
@@ -97,6 +99,7 @@ If you want to return multiple components, but dont want to add a new DOM elemen
 # Props and State
 
 **Props**
+
 - Props are similar to a list of attributes in HTML. (its explisit)
 - Props are fixed, immutable.
 - Props can hold functions as well, not just data. 
@@ -104,6 +107,7 @@ If you want to return multiple components, but dont want to add a new DOM elemen
 
 
 **State**
+
 State is internal. React uses it to autoreflect changes in the browser. 
 Every time a component changes it's state, React rerenders it.
 
